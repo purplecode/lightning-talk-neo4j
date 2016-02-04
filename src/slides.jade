@@ -1,0 +1,146 @@
+section#cover.slide
+    h2 Shower Presentation Engine
+    p
+        | Brought to you by
+        a(href='http://pepelsbey.net') Vadim Makeev
+    img.cover(src='../pictures/cover.jpg', alt='')
+    //
+      To apply styles to the certain slides
+      set slide ID to get needed elements
+    style.
+        #cover h2 {
+            margin:30px 0 0;
+            color:#FFF;
+            text-align:center;
+            font-size:70px;
+        }
+        #cover p {
+            margin:10px 0 0;
+            text-align:center;
+            color:#FFF;
+            font-style:italic;
+            font-size:20px;
+        }
+        #cover p a {
+            color:#FFF;
+        }
+section.slide
+    h2 Shower key features
+    ol
+        li Built on HTML, CSS and vanilla JavaScript
+        li Works in all modern browsers
+        li Themes are separated from engine
+        li Modular and extensible
+        li Fully keyboard accessible
+        li Printable to PDF
+    p.note Shower ['ʃəuə] noun. A person or thing that shows.
+section.slide
+    h2 Plain text on your slides
+    p
+        | Lorem ipsum dolor sit amet, consectetur
+        a(href='#4') adipisicing
+        |  elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        em quis nostrud
+        |  exercitation ullamco laboris
+        strong nisi ut aliquip
+        |  ex ea commodo consequat. Duis aute irure
+        i dolor
+        |  in reprehenderit in voluptate velit esse cillum
+        b dolore
+        |  eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+        code <culpa>
+        |  qui officia deserunt mollit anim id est laborum.
+section.slide
+    h2 Two columns if you like
+    p.double
+        | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.
+section.slide
+    h2 All kind of lists
+    ol
+        li Simple lists are marked with bullets
+        li Ordered lists begin with a number
+        li
+            | You can even nest lists one inside another
+            ul
+                li Or mix their types
+                li But do not go too far
+                li Otherwise audience will be bored
+        li Look, seven rows exactly!
+section.slide
+    h2 Serious citations
+    figure
+        blockquote
+            p
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.
+        figcaption Marcus Tullius Cicero
+section.slide
+    h2 Code samples
+    pre.
+        \n\t\t\t
+        \t\t\t
+        \t\t\t
+        \t\t\t
+        \t\t\t
+        \t\t\t
+        \t\t\t
+        \t\t
+section.slide
+    h2 Even tables
+    table
+        tr
+            th(scope='col') Locavore
+            th Umami
+            th Helvetica
+            th Vegan
+        tr
+            th(scope='row') Fingerstache
+            td Kale
+            td Chips
+            td Keytar
+        tr
+            th(scope='row') Sriracha
+            td Gluten-free
+            td Ennui
+            td Keffiyeh
+        tr
+            th(scope='row') Thundercats
+            td Jean
+            td Shorts
+            td Biodiesel
+        tr
+            th(scope='row') Terry
+            td Richardson
+            td Swag
+            td Blog
+    p It’s good to have information organized.
+section#picture.slide
+    h2 Pictures
+    img.cover(src='../pictures/picture.jpg', alt='')
+    style.
+        #picture h2 {
+            color:#FFF;
+        }
+section.slide
+    h2.shout.shrink You can even shout this way
+section.slide
+    h2 Inner navigation
+    ol
+        li Lets you reveal list items one by one
+        li.next To keep some key points
+        li.next In secret from audience
+        li.next But it will work only once
+        li.next Nobody wants to see the same joke twice
+section.slide.grid
+    h2 All nicely aligned to grid
+section#see-more.slide
+    h2.shout
+        img(src='../pictures/logo.svg', alt='Shower logo')
+        a(href='https://github.com/shower/shower') See more on GitHub
+    style.
+        #see-more h2 {
+            font-size:100px
+        }
+        #see-more img {
+            width:0.72em;
+            height:0.72em;
+        }

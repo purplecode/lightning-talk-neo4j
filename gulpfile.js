@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var jade = require('gulp-jade');
 var webserver = require('gulp-webserver');
+var watch = require('gulp-watch');
 
 
 var paths = {
