@@ -5,15 +5,17 @@ var watch = require('gulp-watch');
 
 
 var paths = {
-    src: './src/*.jade',
+    src: './src/**/*.jade',
     dest: './dist/'
 };
 
-gulp.task('watch', function () {
-    gulp.src(paths.src)
-        .pipe(watch(paths.src))
-        .pipe(jade())
-        .pipe(gulp.dest(paths.dest));
+gulp.task('watch', function (cb) {
+    watch(paths.src, function () {
+        gulp.src(paths.src)
+            .pipe(jade())
+            .pipe(gulp.dest(paths.dest))
+            .on('end', cb);
+    });
 });
 
 gulp.task('server', function () {

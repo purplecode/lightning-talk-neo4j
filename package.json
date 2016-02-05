@@ -5,7 +5,8 @@
   "main": "",
   "scripts": {
     "start": "gulp watch",
-    "server": "gulp server"
+    "server": "gulp server",
+    "docker": "docker run --detach --publish=7474:7474 --volume=data:/data neo4j"
   },
   "author": "Mateusz Jaworski",
   "license": "MIT",
