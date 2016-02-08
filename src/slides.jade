@@ -2,150 +2,114 @@ section#cover.slide
     h2 Neo4j Graph Database
     p
         | by Mateusz Jaworski
-    style.
-        #cover h2 {
-            margin:30px 0 0;
-            color:#FFF;
-            text-align:center;
-            font-size:70px;
-        }
-        #cover p {
-            margin:10px 0 0;
-            text-align:center;
-            color:#FFF;
-            font-style:italic;
-            font-size:20px;
-        }
-        #cover:before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: -1;
-            display: block;
-            background-image: url("../pictures/screen0.png");
-            background-size: cover;
-            -webkit-filter: brightness(35%) hue-rotate(6deg) grayscale(50%);
-        }
+        br
+        | February 2016
+
 section.slide
-    h2 Shower key features
+    h2 Why graph database?
+    ul
+        li give me all neighbours in N hops from A
+        li give me all paths from A to B
+        li give me the shortest path from A to B
+        li is there a node D on path between A and B
+
+section.slide
+    h2 Neo4j features
     ol
-        li Built on HTML, CSS and vanilla JavaScript
-        li Works in all modern browsers
-        li Themes are separated from engine
-        li Modular and extensible
-        li Fully keyboard accessible
-        li Printable to PDF
-    p.note Shower ['ʃəuə] noun. A person or thing that shows.
-section.slide
-    h2 Plain text on your slides
-    p
-        | Lorem ipsum dolor sit amet, consectetur
-        a(href='#4') adipisicing
-        |  elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        em quis nostrud
-        |  exercitation ullamco laboris
-        strong nisi ut aliquip
-        |  ex ea commodo consequat. Duis aute irure
-        i dolor
-        |  in reprehenderit in voluptate velit esse cillum
-        b dolore
-        |  eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-        code <culpa>
-        |  qui officia deserunt mollit anim id est laborum.
-section.slide
-    h2 Two columns if you like
-    p.double
-        | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.
-section.slide
-    h2 All kind of lists
-    ol
-        li Simple lists are marked with bullets
-        li Ordered lists begin with a number
-        li
-            | You can even nest lists one inside another
+        li 1.0 released in February 2010
+        li licensing
             ul
-                li Or mix their types
-                li But do not go too far
-                li Otherwise audience will be bored
-        li Look, seven rows exactly!
+                li community (GPLv3, 1 node)
+                li enterprise (clustering, backup, monitoring, free for open source projects)
+                li government
+        li cypher query language (via HTTP)
+
 section.slide
-    h2 Serious citations
-    figure
-        blockquote
-            p
-                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.
-        figcaption Marcus Tullius Cicero
-section.slide
-    h2 Code samples
-    pre.
-        \n\t\t\t
-        \t\t\t
-        \t\t\t
-        \t\t\t
-        \t\t\t
-        \t\t\t
-        \t\t\t
-        \t\t
-section.slide
-    h2 Even tables
-    table
-        tr
-            th(scope='col') Locavore
-            th Umami
-            th Helvetica
-            th Vegan
-        tr
-            th(scope='row') Fingerstache
-            td Kale
-            td Chips
-            td Keytar
-        tr
-            th(scope='row') Sriracha
-            td Gluten-free
-            td Ennui
-            td Keffiyeh
-        tr
-            th(scope='row') Thundercats
-            td Jean
-            td Shorts
-            td Biodiesel
-        tr
-            th(scope='row') Terry
-            td Richardson
-            td Swag
-            td Blog
-    p It’s good to have information organized.
-section#picture.slide
-    h2 Pictures
-    img.cover(src='../pictures/picture.jpg', alt='')
+    img#ranking(src='images/ranking.png')
     style.
-        #picture h2 {
-            color:#FFF;
+        #ranking {
+            height: 500px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
+
 section.slide
-    h2.shout.shrink You can even shout this way
-section.slide
-    h2 Inner navigation
+    h2 Neo4j features
     ol
-        li Lets you reveal list items one by one
-        li.next To keep some key points
-        li.next In secret from audience
-        li.next But it will work only once
-        li.next Nobody wants to see the same joke twice
-section.slide.grid
-    h2 All nicely aligned to grid
-section#see-more.slide
-    h2.shout
-        img(src='../pictures/logo.svg', alt='Shower logo')
-        a(href='https://github.com/shower/shower') See more on GitHub
-    style.
-        #see-more h2 {
-            font-size:100px
-        }
-        #see-more img {
-            width:0.72em;
-            height:0.72em;
-        }
+        li properties on nodes and edges (primitives or array of primitives)
+        li labels on nodes and edges
+        li indexes
+        li constraints (on nodes or relationships)
+        li ACID transactions
+
+section.slide
+    h2 ACID
+    ol
+        li Neo4j claims to be ACID compliant
+        li but... ACID in distributed database?
+        li but... CAP theorem? (consistency, availability, partition tolerance)
+        li ACID transactions (READ_COMMITTED by default)
+    p.note
+        a(href='http://neo4j.com/docs/stable/transactions.html') more: transaction management
+
+section.slide
+    h2 Built-in algorithms
+    ol
+        li shortest paths
+        li all paths
+        li all simple paths (no repeated nodes)
+        li Dijkstra (shortest path with weights)
+        li A* (shortest path with heuristic)
+
+section.slide
+    h2 Cypher
+    pre
+        code.
+            MATCH (user)-[:friend]->(follower)
+            WHERE user.name IN ['Joe', 'John']
+                AND follower.name =~ 'S.*'
+            RETURN user.name, follower.name
+
+section.slide
+    h2 Cypher
+    pre
+        code.
+            MATCH (a)--(b)
+            MATCH (a)-[:friend]->(b)-->(c)
+            MATCH (a:A { name:'alice' })-[:friend {x:y}]-(b:B)
+            MATCH (a)-[:friend*1..3]->(b)
+
+section.slide
+    h2 Cypher
+    pre
+        code.
+            MATCH (tobias { name: 'Tobias' }),(others)
+            WHERE others.name IN ['A', 'B'] AND (tobias)<--(others)
+            RETURN others
+
+            MATCH (n { name: 'A' })-->(x)
+            RETURN n as n, count(*), avg(n.value)
+            ORDER BY n ASC LIMIT 10
+
+section.slide
+    h2.centered Live demo
+
+section.slide
+    h2 Alternatives
+    ol
+        li OrientDB &nbsp;
+            a(href="http://orientdb.com/") http://orientdb.com/
+        li ArangoDB &nbsp;
+            a(href="https://www.arangodb.com/") https://www.arangodb.com/
+        li Titan &nbsp;
+            a(href="http://thinkaurelius.github.io/titan/") http://thinkaurelius.github.io/titan/
+        li Virtuoso &nbsp;
+            a(href="http://virtuoso.openlinksw.com/") http://virtuoso.openlinksw.com/
+
+section.slide
+    h2.centered Questions?
+
+section.slide
+    h2.centered Thanks!
+
