@@ -31,7 +31,7 @@ section.slide
         li cypher query language (via HTTP)
 
 section.slide
-    img#ranking(src='images/ranking.png')
+    img#ranking(src='src/images/ranking.png')
     style.
         #ranking {
             height: 500px;
@@ -127,11 +127,11 @@ section.slide
                 function wheelCheck(e) {
                     if (!isAlt) return;
                     e.preventDefault();
-                    var delta = MAth.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+                    var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
                     var el = $('svg > g');
                     var transform = el.attr('transform');
                     transform = (transform.indexOf('translate') > -1) ? 'scale(1.0)' : transform;
-                    var scale = new Number(transform.slice(6)) + 0.1 * delta;
+                    var scale = new Number(transform.slice(6, transform.length - 1)) + 0.1 * delta;
                     el.attr('transform', `scale(${scale})`);
                     return false;
                 }

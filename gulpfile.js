@@ -5,35 +5,24 @@ var watch = require('gulp-watch');
 
 
 var paths = {
-    src: {
-        from: './src/**/*.jade',
-        to: './dist/'
-    },
+    src: './src/**/*',
+    index: './src/index.jade',
     styles: './src/styles/**/*.css',
-    images: {
-        from: './src/images/**/*',
-        to: './dist/images'
-    }
+    images: './src/images/**/*'
 };
 
 gulp.task('watch', function () {
-
-    watch([paths.src.from, paths.styles], function () {
-        gulp.src(paths.src.from)
+    watch([paths.src], function () {
+        gulp.src(paths.index)
             .pipe(jade())
-            .pipe(gulp.dest(paths.src.to));
-    });
-
-    watch([paths.images.from], function () {
-        gulp.src(paths.images.from)
-            .pipe(gulp.dest(paths.images.to));
+            .pipe(gulp.dest('.'));
     });
 });
 
 gulp.task('server', function () {
-    gulp.src('./dist/')
+    gulp.src('.')
         .pipe(webserver({
-            fallback: 'dist/index.html',
+            fallback: 'index.html',
             livereload: true,
             open: true
         }));

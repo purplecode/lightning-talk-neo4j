@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><title>Neo4j</title><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css"><link rel="stylesheet" href="components/highlightjs/styles/default.css"><link rel="stylesheet" href="components/highlightjs-cypher/css/cypher-highlighting.css"><style>.centered {
+<!DOCTYPE html><html lang="en"><head><title>Neo4j</title><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="src/shower/themes/ribbon/styles/screen-16x10.css"><link rel="stylesheet" href="bower_components/highlightjs/styles/default.css"><link rel="stylesheet" href="bower_components/highlightjs-cypher/css/cypher-highlighting.css"><style>.centered {
     padding-top: 20%;
     text-align: center;
 }
@@ -25,10 +25,10 @@
     bottom: 0;
     z-index: -1;
     display: block;
-    background-image: url("../images/screen0.png");
+    background-image: url("src/images/screen0.png");
     background-size: cover;
     -webkit-filter: brightness(35%) hue-rotate(6deg) grayscale(50%);
-}</style></head><body class="shower list"><header class="caption"><h1>Neo4j</h1><p>The World's Leading Graph Database</p></header><section id="cover" class="slide"><h2>Neo4j Introduction</h2><p>by Mateusz Jaworski<br>February 2016</p></section><section class="slide"><h2>Why graph database?</h2><ul><li>nodes and relations are first class citizens</li><li>constant time for neighbour lookups</li></ul></section><section class="slide"><h2>Why graph database?</h2><ul><li>give me all neighbours of A in N hops</li><li>give me all paths from A to B</li><li>give me the shortest path from A to B</li><li>is there a node D on path between A and B</li></ul></section><section class="slide"><h2>Neo4j features</h2><ol><li>1.0 released in February 2010</li><li>licensing<ul><li>community (GPLv3, 1 node)</li><li>enterprise (clustering, backup, monitoring, free for open source projects)</li><li>government</li></ul></li><li>cypher query language (via HTTP)</li></ol></section><section class="slide"><img id="ranking" src="images/ranking.png"><style>#ranking {
+}</style></head><body class="shower list"><header class="caption"><h1>Neo4j</h1><p>The World's Leading Graph Database</p></header><section id="cover" class="slide"><h2>Neo4j Introduction</h2><p>by Mateusz Jaworski<br>February 2016</p></section><section class="slide"><h2>Why graph database?</h2><ul><li>nodes and relations are first class citizens</li><li>constant time for neighbour lookups</li></ul></section><section class="slide"><h2>Why graph database?</h2><ul><li>give me all neighbours of A in N hops</li><li>give me all paths from A to B</li><li>give me the shortest path from A to B</li><li>is there a node D on path between A and B</li></ul></section><section class="slide"><h2>Neo4j features</h2><ol><li>1.0 released in February 2010</li><li>licensing<ul><li>community (GPLv3, 1 node)</li><li>enterprise (clustering, backup, monitoring, free for open source projects)</li><li>government</li></ul></li><li>cypher query language (via HTTP)</li></ol></section><section class="slide"><img id="ranking" src="src/images/ranking.png"><style>#ranking {
     height: 500px;
     display: block;
     margin-top: -40px;
@@ -60,11 +60,11 @@ ORDER BY count ASC LIMIT 10
     function wheelCheck(e) {
         if (!isAlt) return;
         e.preventDefault();
-        var delta = MAth.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+        var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
         var el = $('svg > g');
         var transform = el.attr('transform');
         transform = (transform.indexOf('translate') > -1) ? 'scale(1.0)' : transform;
-        var scale = new Number(transform.slice(6)) + 0.1 * delta;
+        var scale = new Number(transform.slice(6, transform.length - 1)) + 0.1 * delta;
         el.attr('transform', `scale(${scale})`);
         return false;
     }
@@ -73,5 +73,5 @@ ORDER BY count ASC LIMIT 10
 }(jQuery));</code></pre><style>#tweak {
     font-size: 9px;
 }
-</style></section><section class="slide"><h2>Alternatives</h2><ol><li>OrientDB &nbsp;<a href="http://orientdb.com/">http://orientdb.com/</a></li><li>ArangoDB &nbsp;<a href="https://www.arangodb.com/">https://www.arangodb.com/</a></li><li>Titan &nbsp;<a href="http://thinkaurelius.github.io/titan/">http://thinkaurelius.github.io/titan/</a></li><li>Virtuoso &nbsp;<a href="http://virtuoso.openlinksw.com/">http://virtuoso.openlinksw.com/</a></li></ol></section><section class="slide"><h2 class="centered">Questions?</h2></section><section class="slide"><h2 class="centered">Thanks!</h2></section><p class="badge"><a href="https://github.com/purplecode/lightning-talk-neo4j">Fork me on GitHub</a></p><div class="progress"></div><script src="shower/shower.min.js"></script><script src="components/highlightjs/highlight.pack.min.js"></script><script src="components/highlightjs-cypher/javascripts/cypher.js"></script><script>hljs.registerLanguage('cypher', cypher)
+</style></section><section class="slide"><h2>Alternatives</h2><ol><li>OrientDB &nbsp;<a href="http://orientdb.com/">http://orientdb.com/</a></li><li>ArangoDB &nbsp;<a href="https://www.arangodb.com/">https://www.arangodb.com/</a></li><li>Titan &nbsp;<a href="http://thinkaurelius.github.io/titan/">http://thinkaurelius.github.io/titan/</a></li><li>Virtuoso &nbsp;<a href="http://virtuoso.openlinksw.com/">http://virtuoso.openlinksw.com/</a></li></ol></section><section class="slide"><h2 class="centered">Questions?</h2></section><section class="slide"><h2 class="centered">Thanks!</h2></section><p class="badge"><a href="https://github.com/purplecode/lightning-talk-neo4j">Fork me on GitHub</a></p><div class="progress"></div><script src="src/shower/shower.min.js"></script><script src="bower_components/highlightjs/highlight.pack.min.js"></script><script src="bower_components/highlightjs-cypher/javascripts/cypher.js"></script><script>hljs.registerLanguage('cypher', cypher)
 hljs.initHighlightingOnLoad();</script></body></html>
