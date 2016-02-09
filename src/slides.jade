@@ -30,10 +30,23 @@ section.slide
                 li government
         li cypher query language (via HTTP)
 
-section.slide
-    img#ranking(src='src/images/ranking.png')
+section.slide#ranking
+    img(src='src/images/ranking.png')
+    p.note
+        | source:&nbsp;
+        a(href="http://db-engines.com/en/ranking") http://db-engines.com/en/ranking
+
     style.
-        #ranking {
+        #ranking .note {
+            margin-right: 9em;
+            font-size: 0.5em;
+            float: right;
+        }
+        #ranking .note a {
+            text-decoration: none;
+            color: inherit;
+        }
+        #ranking img{
             height: 500px;
             display: block;
             margin-top: -40px;
