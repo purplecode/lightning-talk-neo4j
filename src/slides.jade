@@ -8,7 +8,13 @@ section#cover.slide
 section.slide
     h2 Why graph database?
     ul
-        li give me all neighbours in N hops from A
+        li nodes and relations are first class citizens
+        li constant time for neighbour lookups
+
+section.slide
+    h2 Why graph database?
+    ul
+        li give me all neighbours of A in N hops
         li give me all paths from A to B
         li give me the shortest path from A to B
         li is there a node D on path between A and B
@@ -30,6 +36,7 @@ section.slide
         #ranking {
             height: 500px;
             display: block;
+            margin-top: -40px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -37,10 +44,10 @@ section.slide
 section.slide
     h2 Neo4j features
     ol
-        li properties on nodes and edges (primitives or array of primitives)
-        li labels on nodes and edges
-        li indexes
-        li constraints (on nodes or relationships)
+        li properties - on nodes and edges (primitives or array of primitives)
+        li labels - on nodes and edges
+        li indexes - on node properties
+        li constraints - on nodes or relations
         li ACID transactions
 
 section.slide
@@ -65,7 +72,7 @@ section.slide
 section.slide
     h2 Cypher
     pre
-        code.
+        code.cypher.
             MATCH (user)-[:friend]->(follower)
             WHERE user.name IN ['Joe', 'John']
                 AND follower.name =~ 'S.*'
@@ -74,7 +81,7 @@ section.slide
 section.slide
     h2 Cypher
     pre
-        code.
+        code.cypher.
             MATCH (a)--(b)
             MATCH (a)-[:friend]->(b)-->(c)
             MATCH (a:A { name:'alice' })-[:friend {x:y}]-(b:B)
@@ -83,7 +90,7 @@ section.slide
 section.slide
     h2 Cypher
     pre
-        code.
+        code.cypher.
             MATCH (tobias { name: 'Tobias' }),(others)
             WHERE others.name IN ['A', 'B'] AND (tobias)<--(others)
             RETURN others
@@ -94,6 +101,17 @@ section.slide
 
 section.slide
     h2.centered Live demo
+
+section.slide
+    h2 Shell commands
+    ol
+        li :play start
+        li :server connect
+        li :clear
+        li :history
+        li :style [reset]
+        li :config maxRows:100
+
 
 section.slide
     h2 Alternatives
